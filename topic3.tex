@@ -1,0 +1,55 @@
+\documentclass{beamer}
+\usetheme{Boadilla}
+\setbeamertemplate{navigation symbols}{}
+\setbeamercovered{invisible}
+\useinnertheme{rounded}
+
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\usepackage{graphicx}
+\sisetup{range-phrase=...}
+\usepackage{tikz}
+\usetikzlibrary{external}
+\tikzexternalize[optimize=false,prefix=tikz/]
+\usepackage{tikzscale}
+\usepackage{pgfgantt}
+\usepackage{soul}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepackage{tikzscale}
+\usepackage[european]{circuitikz}
+\usepackage{animate}
+\usepgfplotslibrary{fillbetween}
+\usepgfplotslibrary{groupplots}
+
+\title[Topic III: Lattice Design]{JUAS22: Accelerator Design Workshop - Lattice Design}
+\subtitle{Group 10} 
+\author[Noll, Olivares, Plaçais]{Marvin Noll \and Javier Olivares \and Adrien Plaçais}
+\date[\today]{\today}
+
+\begin{document}
+\begin{frame}[plain]
+  \titlepage
+  \end{frame}
+
+\section{Task 1}
+\begin{frame}[t]{Task 1: Some stuff}
+\begin{itemize}
+\item stuff
+\item more stuff
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Task 1: Random plot}
+\begin{figure}
+\centering
+\includegraphics[width=0.9\textwidth,height=0.4\textwidth]{img/steps.tikz}
+\caption{Nicely rendered tikz plot}
+\end{figure}
+\end{frame}
+
+\end{document}
