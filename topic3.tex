@@ -25,23 +25,148 @@
 \usepackage{animate}
 \usepgfplotslibrary{fillbetween}
 \usepgfplotslibrary{groupplots}
+\usepackage{listings}
+\usepackage{tabularx}
+
+\definecolor{juasblue}{rgb}{0,0.5411,0.7647}
+\definecolor{juasgrey}{rgb}{0.49,0.698,0.761}
 
 \title[Topic III: Lattice Design]{JUAS22: Accelerator Design Workshop - Lattice Design}
 \subtitle{Group 10} 
 \author[Noll, Olivares, Plaçais]{Marvin Noll \and Javier Olivares \and Adrien Plaçais}
 \date[\today]{\today}
 
+\makeatletter
+\colorlet{beamer@blendedblue}{juasblue}
+\makeatother
+
 \begin{document}
 \begin{frame}[plain]
   \titlepage
-  \end{frame}
+\end{frame}
 
 \section{Design of Arc Cell}
-\begin{frame}[t]{Design of Arc Cell (1)}
+\begin{frame}[t]{Design of Arc Cell (1): Cell type and phase advance}
+\begin{itemize}
+\item Cell type: \textbf{FODO}
+\item Phase advance: $\mu=\SI{90}{\degree}$
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Design of Arc Cell (1): Cell layout}
 \begin{figure}
 \centering
 \includegraphics[]{img/lattice.tikz}
 \end{figure}
+\end{frame}
+
+\begin{frame}[t,fragile]{Design of Arc Cell (1): $\theta$ and $k_1$}
+\begin{itemize}
+\item Bending angle $\theta$:
+\begin{align*}
+\epsilon_x &= \frac{C_q}{J_x}\,\gamma^2\,\theta^3\,F,\quad \text{with:}\; F=F_\text{FODO}=\frac{1}{2\sin \mu} \frac{5+3\cos \mu}{1-\cos \mu} \frac{L_\text{cell}}{L_B}\\
+\Leftrightarrow \theta &= \SI{01.323}{\milli\radian}\\
+\intertext{
+\item Quadrupole strength $k_1$:
+}
+\sin \frac{\mu}{2} &= \frac{L_Q}{4\,f},\quad \text{and}\;\frac{1}{f}=k_1\,L_Q\\
+\Leftrightarrow k_1 &= \SI{0.05714}{\per\meter\squared}
+\end{align*}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t,fragile]{Design of Arc Cell (1): Tune Matching}
+\begin{lstlisting}
+match, sequence = JC_fodo_arc;
+    GLOBAL, Q1=0.25+0.00001;
+    GLOBAL, Q2=0.25+0.00001;
+    VARY, NAME= K1QF, STEP=0.000001;
+    VARY, NAME= K1QD, STEP=0.000001;
+    LMDIF, CALLS=50, TOLERANCE=1e-8;//method adopted 
+endmatch;
+\end{lstlisting}
+
+\begin{table}
+\centering
+\begin{tabularx}{0.6\textwidth}{lS[table-format=-1.4e-1]S[table-format=-1.4e-1]}
+	\toprule
+	  & {Target Value} & {Final Value}  \\ \midrule
+	q1 & 2.5001E-01 & 2.5001003E-01 \\
+	q2 & 2.5001E-01 & 2.5001003E-01 \\ \bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{table}
+\centering
+\begin{tabularx}{0.6\textwidth}{lS[table-format=-1.4e-1]S[table-format=-1.4e-1]}
+	\toprule
+	     & {Before matching} & {After matching} \\ \midrule
+	k1qf & 5.714e-02       & 4.767e-02      \\
+	k1qd & -5.714e-02      & -4.767e-02     \\ \bottomrule
+\end{tabularx}
+\end{table}
+\end{frame}
+
+\begin{frame}[t,fragile]{Design of Arc Cell (1): Chromaticity Matching}
+\begin{lstlisting}
+match, sequence = JC_fodo_arc;
+    GLOBAL, dq1=0;
+    GLOBAL, dq2=0;
+    VARY, NAME= K2SF, STEP=0.0000001;
+    VARY, NAME= K2SD, STEP=0.0000001;
+    LMDIF, CALLS=200, TOLERANCE=1e-6;
+endmatch;
+\end{lstlisting}
+
+\begin{table}
+\begin{tabularx}{0.6\textwidth}{lS[table-format=-1.2e-1]S[table-format=-1.2e-1]}
+	\toprule
+	    & {Target Value} & {Final Value}  \\ \midrule
+	dq1 & 0              & 7.035E-14 \\
+	dq2 & 0              & 2.599E-13 \\ \bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{table}
+\begin{tabularx}{0.6\textwidth}{lSS[table-format=-1.4e-1]}
+	\toprule
+	     & {Before matching} & {After matching} \\ \midrule
+	k2sf & 0                 & 2.61e-01      \\
+	k2sd & 0                 & -5.003e-01     \\ \bottomrule
+\end{tabularx}
+\end{table}
+\end{frame}
+
+\begin{frame}[t,fragile]{Design of Arc Cell (1): Closing the Ring}
+\begin{itemize}
+\item Close the ring with a loop:
+\begin{lstlisting}
+i = 0;
+JC_ring : SEQUENCE, refer=centre, L=L_JC_ring; 
+    while (i < numberOfCells) {
+        JC_fodo_arc, at=(i + 0.5) * Lcell;
+        i = i + 1;
+    }
+ENDSEQUENCE;
+\end{lstlisting}
+\item Check if ring is closed with \texttt{survey}:
+\begin{equation*}
+\frac{\int\rho\,\text{d}\theta-2\pi}{2\pi}=\frac{\num{6.2854196}-2\pi}{2\pi}=\SI{0.035}{\percent}
+\end{equation*}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Design of Arc Cell (1): Synchrotron Radiation and Emittance}
+\begin{itemize}
+\item Energy loss:
+\begin{equation}
+U_0 = \frac{C_q\,E^4\,I_2}{2\,\pi}=\SI{3.96e-8}{\joule}
+\end{equation}
+\item Emittance:
+\begin{equation}
+\epsilon_x = \frac{C_q\,\gamma_L^2\,I_5}{J_x\,I_2}=\SI{2.58}{\nano\meter\radian}
+\end{equation}
+\end{itemize}
 \end{frame}
 
 \end{document}
