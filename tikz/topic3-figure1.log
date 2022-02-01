@@ -1053,7 +1053,7 @@ s.softclip.code.tex))
 Package translations Info: No language package found. I am going to use `englis
 h' as default language. on input line 34.
 \tikzscale@accuracy=\skip71
-No file tikz/topic3-figure0.aux.
+No file tikz/topic3-figure1.aux.
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 34.
 LaTeX Font Info:    ... okay on input line 34.
 LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 34.
@@ -1238,10 +1238,8 @@ s been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
 \providecommand\pbs@newkey[2]{}
 \providecommand\pbs@seq@push@cx[2]{}
 \providecommand\@anim@newkey[2]{}
-No file tikz/topic3-figure0.nav.
+No file tikz/topic3-figure1.nav.
 (./img/lattice.tikz.pgf
-\openout5 = `tikz/topic3-figure0.dpth'.
-
 LaTeX Font Info:    Trying to load font information for U+msa on input line 6.
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -1255,29 +1253,29 @@ ut line 6.
 (/usr/share/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd
 File: ot1mathkerncmss.fd 2020/01/31 Fontinst v1.933 font definitions for OT1/ma
 thkerncmss.
-) [2
+)) (./img/steps.tikz) (./img/steps.tikz) (./img/steps.tikz) (./img/steps.tikz) 
+(./img/steps.tikz) (./img/steps.tikz
+\openout5 = `tikz/topic3-figure1.dpth'.
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]) (./img/steps.tikz)
-Overfull \vbox (19.82396pt too high) detected at line 57
- []
+[3
 
-[4] ) 
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]) [4] ) 
 Here is how much of TeX's memory you used:
- 58149 strings out of 478353
- 1512237 string characters out of 5854636
- 2253170 words of memory out of 5000000
- 75408 multiletter control sequences out of 15000+600000
+ 58266 strings out of 478353
+ 1514532 string characters out of 5854636
+ 2282661 words of memory out of 5000000
+ 75515 multiletter control sequences out of 15000+600000
  411092 words of font info for 54 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 132i,19n,125p,765b,2483s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/sha
-re/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmssi10.pfb>
-Output written on tikz/topic3-figure0.pdf (2 pages, 41968 bytes).
+ 132i,20n,125p,765b,2585s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmss8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmssbx10.pfb>
+Output written on tikz/topic3-figure1.pdf (2 pages, 38248 bytes).
 PDF statistics:
- 51 PDF objects out of 1000 (max. 8388607)
- 28 compressed objects within 1 object stream
+ 46 PDF objects out of 1000 (max. 8388607)
+ 25 compressed objects within 1 object stream
  2 named destinations out of 1000 (max. 500000)
  49 words of extra memory for PDF output out of 10000 (max. 10000000)
 
