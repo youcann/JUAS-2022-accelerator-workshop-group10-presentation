@@ -1,0 +1,67 @@
+\usetikzlibrary{math}
+\begin{tikzpicture}
+% Cell properties
+\tikzmath{
+\Lcell=60;
+\Lq=1;
+\Lqh=0.5;
+\Ls=1;
+\Lb=12;
+\Lrf=1;
+}
+
+% Drawing properties
+\tikzmath{
+\maxW=11; %maximum width for beamer: ~12
+\eh=1; %element height in cm
+%
+%
+%scaled dimensions:
+\a=(\maxW/\Lcell); %conversion from real world [m] to drawing [cm]
+\lq=\Lq*\a;
+\lqh=\Lqh*\a;
+\ls=\Ls*\a;
+\lb=\Lb*\a;
+\qw=\Lq*\a; %q width in percent of total image width
+\qhw=\Lqh*\a; %q width in percent of total image width
+\sw=\Ls*\a; %q width in percent of total image width
+\bw=\Lb*\a; %q width in percent of total image width
+\rfw=\Lrf*\a;
+}
+
+%define elements
+\tikzset{mylabel/.style={label={[font=\tiny]below:$#1$}}}
+\tikzset{mylabelr/.style={label={[font=\tiny,align=center,rotate=-90,anchor=west]below:$#1$}}}
+\tikzset{QF/.style={inner sep=0, rectangle, draw, fill=blue!50,minimum height=\eh cm,minimum width=\qw cm}}
+\tikzset{QF2/.style={inner sep=0, rectangle, draw, fill=blue!50,minimum height=\eh cm,minimum width=\qhw cm}}
+\tikzset{QD/.style={inner sep=0, rectangle, draw, fill=blue!50,minimum height=\eh cm,minimum width=\qw cm}}
+\tikzset{SF/.style={inner sep=0, rectangle, draw, fill=green!50,minimum height=\eh cm,minimum width=\sw cm}}
+\tikzset{SD/.style={inner sep=0, rectangle, draw, fill=green!50,minimum height=\eh cm,minimum width=\sw cm}}
+\tikzset{B/.style={inner sep=0, rectangle, draw, fill=yellow!50,minimum height=\eh cm,minimum width=\bw cm}}
+\tikzset{RF/.style={inner sep=0, ellipse, draw, fill=red!50,minimum height=\eh cm,minimum width=\rfw cm}}
+
+%orbit
+\draw (-0.5,0) -- (11.5,0);
+
+%dimensions
+\draw[densely dotted] (0,0) -- +(0,\eh*2.5);
+\draw[densely dotted] (\maxW/2,0) -- +(0,\eh*2.2);
+\draw[densely dotted] (\maxW,0) -- +(0,\eh*2.5);
+\draw[Latex-Latex] (0,\eh*2.2) -- node[pos=0.5,fill=white,font=\tiny] {$L_\text{cell}=\SI{\Lcell}{\meter}$} (\maxW,\eh*2.2);
+
+%elements
+\node[QF2, mylabelr=\nicefrac{QF}{2}] (MQF1) at (0.25*\lq+0*\ls+0*\lb+0*\a,0) {};
+\node[SF, mylabelr=SF,] (MSF1) 
+at (0.5*\lq+0.5*\ls+0*\lb+1*\a,0) {};
+
+\node[RF, mylabelr=RF,] (RF) 
+at (0.5*\lq+0.5*\ls+0*\lb+5*\a,0) {};
+
+\node[QD, mylabelr=QD,] (MQD) 
+at (1.0*\lq+1.0*\ls+2.0*\lb+4.0*\a,0) {};
+\node[SD, mylabelr=SD] (MSD) 
+at (1.5*\lq+1.5*\ls+2.0*\lb+5*\a,0) {};
+\node[QF2, mylabelr=\nicefrac{QF}{2}] (MQF2) 
+at (1.75*\lq+2.0*\ls+4.0*\lb+8.0*\a,0) {};
+
+\end{tikzpicture}
