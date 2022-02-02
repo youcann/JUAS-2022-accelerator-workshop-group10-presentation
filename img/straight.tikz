@@ -48,19 +48,19 @@
 
 %elements
 \node[QF2, mylabelr=\nicefrac{QF}{2}] (MQF1) at (0.25*\lq+0*\ls+0*\lb+0*\a,0) {};
-\node[SF, mylabelr=SF,label={[fill=white,font=\tiny,align=center,rotate=-90,anchor=east]above:$L_\text{S}=\SI{\Ls}{\meter}$}] (MSF1) 
+\node[SF, mylabelr=SF,] (MSF1) 
 at (0.5*\lq+0.5*\ls+0*\lb+1*\a,0) {};
-\node[B, mylabel=D\,\{\theta\},label={[fill=white,font=\tiny,align=center,rotate=-90,anchor=east]above:$L_\text{B}=\SI{\Lb}{\meter}$}] (MB1) 
+%\node[B, mylabel=D\,\{\theta\}] (MB1) 
 at (0.5*\lq+1*\ls+0.5*\lb+2*\a,0) {};
-\node[B, mylabel=D\,\{\theta\}] (MB2) 
+%\node[B, mylabel=D\,\{\theta\}] (MB2) 
 at (0.5*\lq+1.0*\ls+1.5*\lb+3.0*\a,0) {};
-\node[QD, mylabelr=QD,label={[fill=white,font=\tiny,align=center,rotate=-90,anchor=east]above:$L_\text{Q}=\SI{\Lq}{\meter}$}] (MQD) 
+\node[QD, mylabelr=QD,] (MQD) 
 at (1.0*\lq+1.0*\ls+2.0*\lb+4.0*\a,0) {};
 \node[SD, mylabelr=SD] (MSD) 
 at (1.5*\lq+1.5*\ls+2.0*\lb+5*\a,0) {};
-\node[B, mylabel=D\,\{\theta\}] (MB3) 
+%\node[B, mylabel=D\,\{\theta\}] (MB3) 
 at (1.5*\lq+2.0*\ls+2.5*\lb+6.0*\a,0) {};
-\node[B, mylabel=D\,\{\theta\}] (MB4) 
+%\node[B, mylabel=D\,\{\theta\}] (MB4) 
 at (1.5*\lq+2.0*\ls+3.5*\lb+7.0*\a,0) {};
 \node[QF2, mylabelr=\nicefrac{QF}{2}] (MQF2) 
 at (1.75*\lq+2.0*\ls+4.0*\lb+8.0*\a,0) {};

@@ -4,29 +4,37 @@
 \setbeamercovered{invisible}
 \useinnertheme{rounded}
 
+%Palatino + AMS Euler
+%\usepackage[euler-digits,euler-hat-accent]{eulervm}
+%\usefonttheme{serif}
+%\usepackage{fontspec}
+%\setmainfont{TeX Gyre Pagella}
 
+
+\usepackage{tikz}
+\usepackage{tikzscale}
+\usetikzlibrary{shapes,arrows.meta}
+\usetikzlibrary{positioning}
+\usetikzlibrary{math}
+%\usetikzlibrary{external}
+%\tikzexternalize[optimize=false,prefix=tikz/]
 \usepackage{amssymb}
+\usepackage{nicefrac}
 \usepackage{amsmath}
+\usepackage{siunitx}
 \usepackage{mathtools}
 \usepackage{booktabs}
-\usepackage{siunitx}
 \usepackage{graphicx}
 \sisetup{range-phrase=...}
-\usepackage{tikz}
-\usetikzlibrary{external}
-\tikzexternalize[optimize=false,prefix=tikz/]
-\usepackage{tikzscale}
 \usepackage{pgfgantt}
 \usepackage{soul}
 \usepackage{pgfplots}
 \pgfplotsset{compat=newest}
-\usepackage{tikzscale}
-\usepackage[european]{circuitikz}
-\usepackage{animate}
 \usepgfplotslibrary{fillbetween}
 \usepgfplotslibrary{groupplots}
 \usepackage{listings}
 \usepackage{tabularx}
+\usepackage{subfig}
 
 \definecolor{juasblue}{rgb}{0,0.5411,0.7647}
 \definecolor{juasgrey}{rgb}{0.49,0.698,0.761}
@@ -53,14 +61,14 @@
 \end{itemize}
 \end{frame}
 
-\begin{frame}[t]{Design of Arc Cell (1): Cell layout}
+\begin{frame}[t,fragile]{Design of Arc Cell (1): Cell layout}
 \begin{figure}
 \centering
 \includegraphics[]{img/lattice.tikz}
 \end{figure}
 \end{frame}
 
-\begin{frame}[t,fragile]{Design of Arc Cell (1): $\theta$ and $k_1$}
+\begin{frame}[t,fragile]{Design of Arc Cell (2): $\theta$ and $k_1$}
 \begin{itemize}
 \item Bending angle $\theta$:
 \begin{align*}
@@ -75,14 +83,14 @@
 \end{itemize}
 \end{frame}
 
-\begin{frame}[t,fragile]{Design of Arc Cell (1): Tune Matching}
+\begin{frame}[t,fragile]{Design of Arc Cell (3): Tune Matching}
 \begin{lstlisting}
 match, sequence = JC_fodo_arc;
     GLOBAL, Q1=0.25+0.00001;
     GLOBAL, Q2=0.25+0.00001;
     VARY, NAME= K1QF, STEP=0.000001;
     VARY, NAME= K1QD, STEP=0.000001;
-    LMDIF, CALLS=50, TOLERANCE=1e-8;//method adopted 
+    LMDIF, CALLS=50, TOLERANCE=1e-8;
 endmatch;
 \end{lstlisting}
 
@@ -107,7 +115,7 @@ endmatch;
 \end{table}
 \end{frame}
 
-\begin{frame}[t,fragile]{Design of Arc Cell (1): Chromaticity Matching}
+\begin{frame}[t,fragile]{Design of Arc Cell (4): Chromaticity Matching}
 \begin{lstlisting}
 match, sequence = JC_fodo_arc;
     GLOBAL, dq1=0;
@@ -137,7 +145,7 @@ endmatch;
 \end{table}
 \end{frame}
 
-\begin{frame}[t,fragile]{Design of Arc Cell (1): Closing the Ring}
+\begin{frame}[t,fragile]{Design of Arc Cell (5): Closing the Ring}
 \begin{itemize}
 \item Close the ring with a loop:
 \begin{lstlisting}
@@ -156,7 +164,7 @@ ENDSEQUENCE;
 \end{itemize}
 \end{frame}
 
-\begin{frame}[t]{Design of Arc Cell (1): Synchrotron Radiation and Emittance}
+\begin{frame}[t]{Design of Arc Cell (6): Synchrotron Radiation and Emittance}
 \begin{itemize}
 \item Energy loss:
 \begin{equation}
@@ -168,5 +176,21 @@ U_0 = \frac{C_q\,E^4\,I_2}{2\,\pi}=\SI{3.96e-8}{\joule}
 \end{equation}
 \end{itemize}
 \end{frame}
+
+\begin{frame}[t]{Dispersion Suppressor (1): Layout}
+\begin{figure}
+  \centering
+  \subfloat[DSL (Dispersion Suppressor Left)]{\includegraphics[]{img/dsl.tikz}}\\
+  \subfloat[DSR (Dispersion Suppressor Right)]{\includegraphics[]{img/dsr.tikz}}
+\end{figure}
+\end{frame}
+
+\begin{frame}[t]{Straight Sections (1): Layout}
+\begin{figure}
+\centering
+\includegraphics[]{img/straight.tikz}
+\end{figure}
+\end{frame}
+
 
 \end{document}
