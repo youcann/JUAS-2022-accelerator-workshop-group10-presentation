@@ -1,0 +1,66 @@
+\begin{tikzpicture}
+\definecolor{betxcolor}{rgb}{0.05,0.05,0.05}
+\definecolor{betycolor}{rgb}{1,0.05,0.05}
+\definecolor{dxcolor}{rgb}{0.05,0.7,0.05}
+\def\gpwidth{9cm}
+\def\gpheight{4cm}
+
+\begin{groupplot}[
+group style={group size=1 by 2, x descriptions at=edge bottom,vertical sep=0.4cm},
+legend cell align={left},
+legend columns=1,
+legend style={fill opacity=0.8, draw opacity=1, text opacity=1, draw=white!80!black,font=\tiny},
+tick align=outside,
+tick pos=left,
+x grid style={white!69.0196078431373!black},
+xlabel={Path Length $s$ (\si{\meter})},
+xtick style={color=black},
+y grid style={white!69.0196078431373!black},
+ytick style={color=black},
+clip mode=individual,
+xmax=80
+]
+\nextgroupplot[xtick=\empty,ymin=0,ymax=120,ylabel={$\beta_x,\,\beta_y$ (\si{\m})},height=\gpheight,width=\gpwidth]
+\addplot [thick, betxcolor]
+table {%
+0.0 102.0237699221741
+0.25 101.72068526496476
+15.0 45.16414016873146
+30.0 17.64127821777247
+45.0 45.16414016873147
+59.75 101.7206852649648
+60.0 102.02376992217408
+};
+\addlegendentry{$\beta_x$}
+
+\addplot [thick, betycolor]
+table {%
+0.0 17.64106301486778
+0.25 17.697226406877196
+15.0 45.163818883512945
+30.0 102.02354812212525
+45.0 45.163818883512945
+59.75 17.697226406877185
+60.0 17.64106301486777
+};
+\addlegendentry{$\beta_y$}
+\draw[densely dotted,color=gray] (axis cs:\pgfkeysvalueof{/pgfplots/xmin},17.64) -- node[pos=1,anchor=west] {$\beta_{x,y_\text{min}=\SI{17.64}{\meter}}$} (axis cs:\pgfkeysvalueof{/pgfplots/xmax},17.64);
+\draw[densely dotted,color=gray] (axis cs:\pgfkeysvalueof{/pgfplots/xmin},102.024) -- node[pos=1,anchor=west] {$\beta_{x,y_\text{max}=\SI{102.024}{\meter}}$} (axis cs:\pgfkeysvalueof{/pgfplots/xmax},102.024);
+
+\nextgroupplot[ylabel=$D_x$ (\si{\m}),height=\gpheight,width=\gpwidth,ymin=-1,ymax=1]
+\addplot [thick, dxcolor]
+table {%
+0.0 0.0
+0.25 0.0
+15.0 0.0
+30.0 0.0
+45.0 0.0
+59.75 0.0
+60.0 0.0
+};
+\addlegendentry{$D_x$}
+
+\draw[densely dotted,color=gray] (axis cs:\pgfkeysvalueof{/pgfplots/xmin},0) -- node[pos=1,anchor=west] {$D_x=\SI{0}{\meter}$} (axis cs:\pgfkeysvalueof{/pgfplots/xmax},0);
+
+\end{groupplot}
+\end{tikzpicture}
