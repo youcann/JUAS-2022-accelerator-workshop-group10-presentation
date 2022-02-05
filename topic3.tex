@@ -193,7 +193,7 @@ U_0 = \frac{C_q\,E^4\,I_2}{2\,\pi}=\SI{3.96e-8}{\joule}
 \end{figure}
 \end{frame}
 
-\begin{frame}[t,fragile]{Dispersion Suppressor (2): $\beta$-Functions and Dispersion}
+\begin{frame}[t,fragile]{Dispersion Suppressor (2): $\beta$-Functions, Dispersion}
 \begin{figure}
 \centering
 \includegraphics[]{img/dispersionSuppressors_beta.tikz}
@@ -238,17 +238,34 @@ U_\text{turn} = U(t=t_0) &= e\,V_\text{RF} \sin\left(2\pi(\phi-h)\right)\\
 \end{figure}
 \end{frame}
 
+% \begin{frame}[t,fragile]{Number of Bunches in the Ring}
+% \begin{itemize}
+% \item Total power radiated per particle and turn:
+% \begin{equation*}
+% P=\frac{e^2\,c}{6\pi\,\epsilon_0}\;\frac{\beta^2\,\gamma^4}{\rho^2}
+% \end{equation*}
+% \item $n_\text{particles} \approx \num{2e11}$
+% \item $P_\text{max} = \SI{50}{\mega\watt}$
+% \item Number of bunches limited by synchrotron radiation:
+% \begin{equation*}
+% n_\text{bunches} = \frac{P_\text{max}}{P\cdot n_\text{particles}} = 115
+% \end{equation*}
+% \end{itemize}
+% \end{frame}
 \begin{frame}[t,fragile]{Number of Bunches in the Ring}
 \begin{itemize}
-\item Total power radiated per particle and turn:
+   \item Energy lost per particle and per turn, calculated with MAD-X:
+      \begin{equation*}
+         U_0= \SI{4.62}{\GeV}
+      \end{equation*}
 \begin{equation*}
-P=\frac{e^2\,c}{6\pi\,\epsilon_0}\;\frac{\beta^2\,\gamma^4}{\rho^2}
+   P=\frac{\beta c}{L_{\textrm{ring}}}\,U_0
 \end{equation*}
-\item $n_\text{particles} \approx \num{2e11}$
-\item $P_\text{max} = \SI{50}{\mega\watt}$
-\item Number of bunches limited by synchrotron radiation:
+   \item $n_\text{particles} \approx \num{2e11}$
+   \item $P_\text{max} = \SI{50}{\mega\watt}$
+   \item Number of bunches limited by synchrotron radiation:
 \begin{equation*}
-n_\text{bunches} = \frac{P_\text{max}}{P\cdot n_\text{particles}} = 115
+n_\text{bunches} = \frac{P_\text{max}}{P\cdot n_\text{particles}} = 122
 \end{equation*}
 \end{itemize}
 \end{frame}
