@@ -5,6 +5,11 @@
 \def\gpwidth{9cm}
 \def\gpheight{4cm}
 
+\tikzmath{
+\eh=0.25; %element height in cm
+}
+\tikzset{mylabelr/.style={label={[font=\tiny,align=center,anchor=south]above:#1}}}
+
 \begin{groupplot}[
 group style={group size=1 by 2, x descriptions at=edge bottom,vertical sep=0.4cm},
 legend cell align={left},
@@ -21,6 +26,16 @@ clip mode=individual,
 xmax=540
 ]
 \nextgroupplot[xtick=\empty,ymin=0,ymax=120,ylabel={$\beta_x,\,\beta_y$ (\si{\m})},height=\gpheight,width=\gpwidth]
+\begin{scope}[shift={(0,130)}]
+\draw (-10,0) -- (490,0);
+\node[rectangle,draw,fill=gray!50,inner sep=0,minimum width=21,minimum height=0.25cm,mylabelr=arc] (arc1) at (0.5*60,0) {};
+\node[rectangle,draw,fill=gray!50,inner sep=0,minimum width=21,minimum height=0.25cm,mylabelr=arc] (arc1) at (1.5*60,0) {};
+\node[rectangle,draw,fill=orange!50,inner sep=0,minimum width=42,minimum height=0.25cm,mylabelr=DSR] (arc1) at (3*60,0) {};
+\node[rectangle,draw,fill=orange!50,inner sep=0,minimum width=42,minimum height=0.25cm,mylabelr=DSL] (arc1) at (5*60,0) {};
+\node[rectangle,draw,fill=gray!50,inner sep=0,minimum width=21,minimum height=0.25cm,mylabelr=arc] (arc1) at (6.5*60,0) {};
+\node[rectangle,draw,fill=gray!50,inner sep=0,minimum width=21,minimum height=0.25cm,mylabelr=arc] (arc1) at (7.5*60,0) {};
+\end{scope}
+
 \addplot [thick, betxcolor]
 table {%
 0.0 102.02327182182907
