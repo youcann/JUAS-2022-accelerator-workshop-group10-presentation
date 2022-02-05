@@ -1,0 +1,25 @@
+\begin{tikzpicture}
+\def\gpwidth{11cm}
+\def\gpheight{5cm}
+
+\begin{axis}[
+width=\gpwidth,
+height=\gpheight,
+legend cell align={left},
+legend columns=1,
+legend style={fill opacity=0.8, draw opacity=1, text opacity=1, draw=white!80!black,font=\tiny},
+tick align=outside,
+tick pos=left,
+x grid style={white!69.0196078431373!black},
+xlabel={Path Length $s$ (\si{\kilo\meter})},
+ylabel style={align=center},
+ylabel={Horizontal \\orbit $x$ (\si{\milli\meter})},
+xtick style={color=black},
+y grid style={white!69.0196078431373!black},
+ytick style={color=black},
+]
+\addplot [,thick, blue!80!black]
+table [x=s, y=x, col sep=comma] {img/orbit.csv};
+\addlegendentry{$x$}
+\end{axis}
+\end{tikzpicture}

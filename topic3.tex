@@ -59,7 +59,7 @@
 \includegraphics[]{img/lattice.tikz}
 \end{figure}
 \begin{itemize}
-\item Cell type: \textbf{FODO}
+\item Cell type: FODO
 \item Phase advance: $\mu=\SI{90}{\degree}$
 \end{itemize}
 \end{frame}
@@ -79,7 +79,7 @@
 %\end{itemize}
 %\end{frame}
 %
-\begin{frame}[t,fragile]{Design of Arc Cell (3): $\beta$-Functions and Dispersion}
+\begin{frame}[t,fragile]{Design of Arc Cell (2): $\beta$-Functions and Dispersion}
 \begin{figure}
 \centering
 \includegraphics[]{img/lattice_beta.tikz}
@@ -148,7 +148,7 @@
 %\end{table}
 %\end{frame}
 
-\begin{frame}[t,fragile]{Design of Arc Cell (5): Closing the Ring}
+\begin{frame}[t,fragile]{Closing the Ring}
 \begin{itemize}
 \item Close the ring with a loop:
 \begin{lstlisting}
@@ -167,7 +167,7 @@ ENDSEQUENCE;
 \end{itemize}
 \end{frame}
 
-\begin{frame}[t]{Design of Arc Cell (4): Synchrotron Radiation and Emittance}
+\begin{frame}[t]{Synchrotron Radiation and Emittance}
 \begin{itemize}
 \item Energy loss:
 \begin{equation*}
@@ -208,15 +208,49 @@ U_0 = \frac{C_q\,E^4\,I_2}{2\,\pi}=\SI{3.96e-8}{\joule}
 \end{figure}
 \end{frame}
 
-\begin{frame}[t,fragile]{Matching Sections (1): $\beta$-Functions and Dispersion}
-todo
-\end{frame}
 
-\begin{frame}[t,fragile]{Matching Sections (2): Matching sections installed}
+\begin{frame}[t,fragile]{Matching Sections}
 \begin{figure}
 \centering
 \includegraphics[]{img/matchingAndStraight_beta.tikz}
 \end{figure}
+\end{frame}
+
+\begin{frame}[t,fragile]{RF Sections (1): Layout}
+\begin{figure}
+\centering
+\includegraphics[]{img/rf.tikz}
+\end{figure}
+\begin{itemize}
+\item From topic II groups: $V_\text{RF}=\SI{10.64}{\giga\volt}$
+\item Synchronous phase:
+\begin{align*}
+U_\text{turn} = U(t=t_0) &= e\,V_\text{RF} \sin\left(2\pi(\phi-h)\right)\\
+\Rightarrow \phi_\text{above transition} &= 0.5 - \frac{\arcsin\left(\frac{U_\text{turn}}{e\,V_\text{RF}}\right)}{2\pi} = \SI{0.33}{\radian}
+\end{align*}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t,fragile]{RF Sections (2): Transverse orbit}
+\begin{figure}
+\centering
+\includegraphics[]{img/transverseorbit.tikz}
+\end{figure}
+\end{frame}
+
+\begin{frame}[t,fragile]{Number of Bunches in the Ring}
+\begin{itemize}
+\item Total power radiated per particle and turn:
+\begin{equation*}
+P=\frac{e^2\,c}{6\pi\,\epsilon_0}\;\frac{\beta^2\,\gamma^4}{\rho^2}
+\end{equation*}
+\item $n_\text{particles} \approx \num{2e11}$
+\item $P_\text{max} = \SI{50}{\mega\watt}$
+\item Number of bunches limited by synchrotron radiation:
+\begin{equation*}
+n_\text{bunches} = \frac{P_\text{max}}{P\cdot n_\text{particles}} = 115
+\end{equation*}
+\end{itemize}
 \end{frame}
 
 
