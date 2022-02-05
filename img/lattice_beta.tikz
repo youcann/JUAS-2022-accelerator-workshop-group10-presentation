@@ -35,12 +35,12 @@
 %define elements
 \tikzset{mylabel/.style={label={[font=\tiny]above:$#1$}}}
 \tikzset{mylabelr/.style={label={[font=\tiny,align=center,rotate=-90,anchor=east]above:$#1$}}}
-\tikzset{QF/.style={inner sep=0, rectangle, draw, fill=blue!50,minimum height=\eh cm,minimum width=\qw }}
-\tikzset{QF2/.style={inner sep=0, rectangle, draw, fill=blue!50,minimum height=\eh cm,minimum width=\qhw }}
-\tikzset{QD/.style={inner sep=0, rectangle, draw, fill=blue!50,minimum height=\eh cm,minimum width=\qw }}
-\tikzset{SF/.style={inner sep=0, rectangle, draw, fill=green!50,minimum height=\eh cm,minimum width=\sw }}
-\tikzset{SD/.style={inner sep=0, rectangle, draw, fill=green!50,minimum height=\eh cm,minimum width=\sw }}
-\tikzset{B/.style={inner sep=0, rectangle, draw, fill=yellow!50,minimum height=\eh cm,minimum width=\bw }}
+\tikzset{QF/.style={inner sep=0, rectangle, draw, fill=blue!50,minimum height=\eh cm,minimum width=2*\qw }}
+\tikzset{QF2/.style={inner sep=0, rectangle, draw, fill=blue!50,minimum height=\eh cm,minimum width=2*\qhw }}
+\tikzset{QD/.style={inner sep=0, rectangle, draw, fill=blue!50,minimum height=\eh cm,minimum width=2*\qw }}
+\tikzset{SF/.style={inner sep=0, rectangle, draw, fill=green!50,minimum height=\eh cm,minimum width=2*\sw }}
+\tikzset{SD/.style={inner sep=0, rectangle, draw, fill=green!50,minimum height=\eh cm,minimum width=2*\sw }}
+\tikzset{B/.style={inner sep=0, rectangle, draw, fill=yellow!50,minimum height=\eh cm,minimum width=2*\bw }}
 
 
 \begin{groupplot}[
