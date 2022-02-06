@@ -31,10 +31,10 @@ xmax=1000
 \draw (-30,0) -- (870,0);
 \node[rectangle,draw,fill=gray!50,inner sep=0,minimum width=\len,minimum height=0.25cm,mylabelr=arc] (arc1) at (0.5*60+0*120+0*180,0) {};
 \node[rectangle,draw,fill=orange!50,inner sep=0,minimum width=2*\len,minimum height=0.25cm,mylabelr=DSR] (arc1) at (1*60+0.5*120+0*180,0) {};
-\node[rectangle,draw,fill=purple!50,inner sep=0,minimum width=3*\len,minimum height=0.25cm,mylabelr=MSL] (arc1) at (1*60+1*120+0.5*180,0) {};
+\node[rectangle,draw,fill=brown!70,inner sep=0,minimum width=3*\len,minimum height=0.25cm,mylabelr=MSL] (arc1) at (1*60+1*120+0.5*180,0) {};
 \node[rectangle,draw,fill=gray!10,inner sep=0,minimum width=1*\len,minimum height=0.25cm,mylabelr=SS] (arc1) at (1.5*60+1*120+1*180,0) {};
 \node[rectangle,draw,fill=gray!10,inner sep=0,minimum width=1*\len,minimum height=0.25cm,mylabelr=SS] (arc1) at (2.5*60+1*120+1*180,0) {};
-\node[rectangle,draw,fill=purple!50,inner sep=0,minimum width=3*\len,minimum height=0.25cm,mylabelr=MSR] (arc1) at (3*60+1*120+1.5*180,0) {};
+\node[rectangle,draw,fill=brown!70,inner sep=0,minimum width=3*\len,minimum height=0.25cm,mylabelr=MSR] (arc1) at (3*60+1*120+1.5*180,0) {};
 \node[rectangle,draw,fill=orange!50,inner sep=0,minimum width=2*\len,minimum height=0.25cm,mylabelr=DSL] (arc1) at (3*60+1.5*120+2*180,0) {};
 \node[rectangle,draw,fill=gray!50,inner sep=0,minimum width=1*\len,minimum height=0.25cm,mylabelr=arc] (arc1) at (3.5*60+2*120+2*180,0) {};
 \end{scope}

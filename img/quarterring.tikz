@@ -1,0 +1,39 @@
+\begin{tikzpicture}
+\tikzmath{
+\Lcell=60;
+\R=12452.3;
+\sc=0.01;
+\hei=6;
+\lcell=\sc*\Lcell;
+\lms=3*\lcell;
+\lds=2*\lcell;
+\lfodorf=19*\lcell;
+\lfodo=297*\lcell;
+\r=\sc*\R;
+}
+
+
+\begin{scope}[shift={(0,0)},rotate=0]
+	\foreach \a in {1,2,...,30}{
+	\draw (12+\a*67/30: \r cm) node[inner sep=0,draw,fill=gray!50,minimum width=\hei cm,minimum height=\lcell*8 cm,rotate=12+\a*67/30] {};
+	}
+	\draw (10+0*67/30: \r cm) node[inner sep=0,draw,fill=orange!50,minimum width=\hei cm,minimum height=\lds*10 cm,rotate=10+0*67/30] {};
+	\draw (10+32.8*67/30: \r cm) node[inner sep=0,draw,fill=orange!50,minimum width=\hei cm,minimum height=\lds*10 cm,rotate=10+33*67/30] {};
+\end{scope}
+\begin{scope}[shift={(-25/2*\lcell,\r)},rotate=0]
+	\node[inner sep=0,draw,fill=brown!70,minimum width=\lms cm,minimum height=\hei cm] at (0.5*\lms,0) {};
+	\node[inner sep=0,draw,fill=red!50,minimum width=\lfodorf cm,minimum height=\hei cm] at (\lms+0.5*\lfodorf,0) {};
+	\node[inner sep=0,draw,fill=brown!70,minimum width=\lms cm,minimum height=\hei cm] at (1.5*\lms+\lfodorf,0) {};
+\end{scope}
+\begin{scope}[shift={(-25/2*\lcell+\r+\hei,0)},rotate=90]
+	\node[inner sep=0,draw,fill=brown!70,minimum height=\lms cm,minimum width=\hei cm] at (0.5*\lms,0) {};
+	\node[inner sep=0,draw,fill=red!50,minimum height=\lfodorf cm,minimum width=\hei cm] at (\lms+0.5*\lfodorf,0) {};
+	\node[inner sep=0,draw,fill=brown!70,minimum height=\lms cm,minimum width=\hei cm] at (1.5*\lms+\lfodorf,0) {};
+\end{scope}
+
+
+
+
+
+
+\end{tikzpicture}

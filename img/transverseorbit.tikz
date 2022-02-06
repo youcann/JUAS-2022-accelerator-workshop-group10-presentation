@@ -1,6 +1,6 @@
 \begin{tikzpicture}
 \def\gpwidth{11cm}
-\def\gpheight{5cm}
+\def\gpheight{4cm}
 
 \begin{axis}[
 width=\gpwidth,
