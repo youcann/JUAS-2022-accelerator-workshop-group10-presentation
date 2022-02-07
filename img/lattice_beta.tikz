@@ -127,7 +127,7 @@ table {%
 59.75 101.72018915105451
 60.0 102.0232718218291
 };
-\addlegendentry{$\beta_{x_\text{dx}}$}
+\addlegendentry{$\beta_{x_\text{dq}}$}
 
 \addplot [thick, betycolor]
 table {%
@@ -174,7 +174,7 @@ table {%
 59.75 17.697226406877185
 60.0 17.64106301486777
 };
-\addlegendentry{$\beta_{y_\text{dx}}$}
+\addlegendentry{$\beta_{y_\text{dq}}$}
 
 \draw[densely dotted,color=gray] (axis cs:\pgfkeysvalueof{/pgfplots/xmin},17.64) -- node[pos=1,anchor=west] {$\beta_{x,y_\text{min}=\SI{17.64}{\meter}}$} (axis cs:\pgfkeysvalueof{/pgfplots/xmax},17.64);
 \draw[densely dotted,color=gray] (axis cs:\pgfkeysvalueof{/pgfplots/xmin},102.024) -- node[pos=1,anchor=west] {$\beta_{x,y_\text{max}=\SI{102.024}{\meter}}$} (axis cs:\pgfkeysvalueof{/pgfplots/xmax},102.024);
@@ -226,7 +226,7 @@ table {%
 59.75 0.21427944438468452
 60.0 0.2146212819725416
 };
-\addlegendentry{$D_{x_\text{dx}}$}
+\addlegendentry{$D_{x_\text{dq}}$}
 
 \draw[densely dotted,color=gray] (axis cs:\pgfkeysvalueof{/pgfplots/xmin},0.103) -- node[pos=1,anchor=west] {$D_{x_\text{min}=\SI{0.103}{\meter}}$} (axis cs:\pgfkeysvalueof{/pgfplots/xmax},0.103);
 \draw[densely dotted,color=gray] (axis cs:\pgfkeysvalueof{/pgfplots/xmin},0.215) -- node[pos=1,anchor=west] {$D_{x_\text{max}=\SI{0.215}{\meter}}$} (axis cs:\pgfkeysvalueof{/pgfplots/xmax},0.215);
