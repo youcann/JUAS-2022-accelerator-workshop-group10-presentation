@@ -16,8 +16,8 @@
 \usetikzlibrary{shapes,arrows.meta}
 \usetikzlibrary{positioning}
 \usetikzlibrary{math}
-%\usetikzlibrary{external}
-%\tikzexternalize[optimize=false,prefix=tikz/]
+\usetikzlibrary{external}
+\tikzexternalize[optimize=false,prefix=tikz/]
 \usepackage{amssymb}
 \usepackage{nicefrac}
 \usepackage{amsmath}
@@ -54,7 +54,7 @@
 \end{frame}
 
 \section{Arc Cell}
-\begin{frame}[t,fragile]{Design of Arc Cell (1): Cell layout}
+\begin{frame}[t,fragile]{Arc Cell (1): Cell layout}
 \begin{figure}
 \centering
 \includegraphics[]{img/lattice.tikz}
@@ -80,7 +80,7 @@
 %\end{itemize}
 %\end{frame}
 %
-\begin{frame}[t,fragile]{Design of Arc Cell (2): $\beta$-Functions and Dispersion}
+\begin{frame}[t,fragile]{Arc Cell (2): $\beta$-Functions and Dispersion}
 \begin{figure}
 \centering
 \includegraphics[]{img/lattice_beta.tikz}
@@ -149,9 +149,9 @@
 %\end{table}
 %\end{frame}
 
-\begin{frame}[t,fragile]{Closing the Ring}
+\begin{frame}[t,fragile]{Arc Cell (3): Closing the Ring}
 \begin{itemize}
-\item Close the ring with a loop:
+\item Building the ring with a loop:
 \begin{lstlisting}
 i = 0;
 JC_ring : SEQUENCE, refer=centre, L=L_JC_ring; 
@@ -163,21 +163,31 @@ ENDSEQUENCE;
 \end{lstlisting}
 \item Check if ring is closed with \texttt{survey}:
 \begin{equation*}
-\frac{\int\rho\,\text{d}\theta-2\pi}{2\pi}=\frac{\num{6.2854196}-2\pi}{2\pi}=\SI{0.035}{\percent}
+\frac{\oint_C\text{d}\theta-2\pi}{2\pi}=\frac{\num{6.2854196}-2\pi}{2\pi}=\SI{0.035}{\percent}
 \end{equation*}
 \end{itemize}
 \end{frame}
 
-\begin{frame}[t]{Synchrotron Radiation and Emittance}
+\begin{frame}[t]{Arc Cell (4): Numerical Calculations}
 \begin{itemize}
+\item Bending angle $\theta$:
+\begin{align*}
+\epsilon_x &= \frac{C_q}{J_x}\,\gamma^2\,\theta^3\,F,\quad \text{with:}\; F=F_\text{FODO}=\frac{1}{2\sin \mu} \frac{5+3\cos \mu}{1-\cos \mu} \frac{L_\text{cell}}{L_B}\\
+\Leftrightarrow \theta &= \SI{01.323}{\milli\radian}\\
+\intertext{
+\item Quadrupole strength $k_1$:
+}
+\sin \frac{\mu}{2} &= \frac{L_Q}{4\,f},\quad \text{and}\;\frac{1}{f}=k_1\,L_Q\quad
+\Leftrightarrow k_1 = \SI{0.05714}{\per\meter\squared}\\
+\intertext{
 \item Energy loss:
-\begin{equation*}
-U_0 = \frac{C_q\,E^4\,I_2}{2\,\pi}=\SI{3.96e-8}{\joule}
-\end{equation*}
+}
+U_\text{turn} &= \frac{C_q\,E^4\,I_2}{2\,\pi}=\SI{39.6}{\nano\joule}\\
+\intertext{
 \item Emittance:
-\begin{equation*}
-\epsilon_x = \frac{C_q\,\gamma_L^2\,I_5}{J_x\,I_2}=\SI{2.58}{\nano\meter\radian}
-\end{equation*}
+}
+\epsilon_x &= \frac{C_q\,\gamma^2\,I_5}{J_x\,I_2}=\SI{2.58}{\nano\meter\radian}
+\end{align*}
 \end{itemize}
 \end{frame}
 
